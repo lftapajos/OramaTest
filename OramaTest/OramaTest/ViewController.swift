@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    //var storyboard = UIStoryboard(name: "Main", bundle: nil)
     let fundItems: Array<Fund> = Fund().getFunds()
     
     @IBOutlet weak var viewHistory: UIView!
@@ -17,13 +18,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
         fundCollectionView.dataSource = self
         fundCollectionView.delegate = self
         
         self.viewHistory.layer.cornerRadius = 10
     }
 
+    @IBAction func showHistoric(_ sender: Any) {
+        let historicViewController = storyboard?.instantiateViewController(withIdentifier: "HistoricViewController") as! HistoricViewController
+        self.present(historicViewController, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,16 +50,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let row = indexPath.row
         let fund = fundItems[row]
         cell.simpleName.text = fund.simpleName
-        cell.operabilityMinimum.text = "R$ \(fund.operabilityMinimum)"
+        cell.operabilityMinimum.text = Fund().formatCurrency(fund.operabilityMinimum)
         cell.fundRisk.text = fund.fundRisk
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Aqui")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let detailViewController = storyboard.instantiateViewController(withIdentifier: "FoundDetailViewController") as! FoundDetailViewController
+        let detailViewController = storyboard?.instantiateViewController(withIdentifier: "FoundDetailViewController") as! FoundDetailViewController
         detailViewController.index = indexPath.row
         self.present(detailViewController, animated: true, completion: nil)
     }

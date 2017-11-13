@@ -34,5 +34,17 @@ class Fund {
         return funds
     }
 
+    func formatCurrency(_ value: Double) -> String{
+        return "R$ \(value)"
+    }
     
+    func getHistoric() -> Array<Fund> {
+        let funds = [
+            Fund(simpleName: "Fundo 1", operabilityMinimum: 1500, fundRisk: "3"),
+            Fund(simpleName: "Fundo 5", operabilityMinimum: 4000, fundRisk: "5"),
+            Fund(simpleName: "Fundo 6", operabilityMinimum: 5000, fundRisk: "6")
+        ]
+        
+        return funds
+    }
 }
