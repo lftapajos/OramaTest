@@ -37,6 +37,14 @@ class FoundDetailViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func buyFound(_ sender: Any) {
+        let passwordViewController = storyboard?.instantiateViewController(withIdentifier: "PasswordViewController") as! PasswordViewController
+        passwordViewController.index = index
+        self.present(passwordViewController, animated: true, completion: nil)
+    }
+    
+    //PasswordViewController
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
