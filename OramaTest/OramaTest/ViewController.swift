@@ -18,8 +18,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewHistory.layer.cornerRadius = 10
+        fundCollectionView.dataSource = self
+        fundCollectionView.delegate = self
         
+        self.viewHistory.layer.cornerRadius = 10
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +49,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         return cell
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Aqui")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewController = storyboard.instantiateViewController(withIdentifier: "FoundDetailViewController") as! FoundDetailViewController
+        detailViewController.index = indexPath.row
+        self.present(detailViewController, animated: true, completion: nil)
+    }
+    
 }
 

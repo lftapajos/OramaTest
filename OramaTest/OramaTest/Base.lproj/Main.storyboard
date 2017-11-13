@@ -159,7 +159,7 @@
         <!--Found Detail View Controller-->
         <scene sceneID="Mqb-uv-CxU">
             <objects>
-                <viewController id="fer-ni-6mE" customClass="FoundDetailViewController" customModule="OramaTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FoundDetailViewController" id="fer-ni-6mE" customClass="FoundDetailViewController" customModule="OramaTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="49k-Fs-Opm"/>
                         <viewControllerLayoutGuide type="bottom" id="vF8-mW-YPi"/>
@@ -183,6 +183,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZL-WC-F6K">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                 <state key="normal" backgroundImage="back.png"/>
+                                                <connections>
+                                                    <action selector="backFundHome:" destination="fer-ni-6mE" eventType="touchUpInside" id="ssq-FW-TYL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -295,6 +298,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="3ox-HD-Yzu" secondAttribute="trailing" id="ww4-jb-QIJ"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="fullName" destination="3ox-HD-Yzu" id="vuk-Hp-luS"/>
                         <outlet property="fundManagerDescription" destination="ZT0-oO-TBK" id="nbT-Vc-RIK"/>
