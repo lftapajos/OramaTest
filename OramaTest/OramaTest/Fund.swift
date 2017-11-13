@@ -47,4 +47,9 @@ class Fund {
         
         return funds
     }
+    
+    func getFundItem(position fund: Int) -> Fund {
+        let fundToBuy = Fund(simpleName: "Fundo 1", operabilityMinimum: 1500, fundRisk: "3")
+        return fundToBuy
+    }
 }

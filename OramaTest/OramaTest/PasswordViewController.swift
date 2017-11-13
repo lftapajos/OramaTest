@@ -13,6 +13,7 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     var index = 0
+    var fundItems: Array<Fund> = Fund().getHistoric()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,11 @@ class PasswordViewController: UIViewController {
     }
     
     @IBAction func confirmPurchase(_ sender: Any) {
-        //self.dismiss(animated: true, completion: nil)
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        //Efetua a compra
+        let fundItem = Fund().getFundItem(position: index)
+        buy(fundItem)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -47,5 +51,21 @@ extension PasswordViewController {
     
     func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension PasswordViewController: BuyPurchaseDelegate {
+    
+    //let delegate : BuyPurchaseDelegate?
+    
+    func buy(_ fundItem: Fund) {
+        self.fundItems.append(fundItem)
+        //Dao().save(fundItem)
+        
+        Alert(controller: self).show(fundItem, handler : { action in
+
+            //Fecha as telas
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        })
     }
 }
