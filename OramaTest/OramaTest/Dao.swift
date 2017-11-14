@@ -22,6 +22,8 @@ class Dao {
         let userDirs = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         let dir = userDirs[0]
         //print(dir)
+        
+        //Configura arquivos
         fundArchive = "\(dir)/orama-test-fund.data"
         detailFundArchive = "\(dir)/orama-test-detail-fund.data"
         historicArchive = "\(dir)/orama-test-historic.data"
@@ -33,7 +35,7 @@ class Dao {
         NSKeyedArchiver.archiveRootObject(fund, toFile: historicArchive)
     }
     
-    //Carrega Fundos salvos
+    //Carrega Fundos salvos no Histórico
     func load() -> Array<Fund> {
         if let loaded = NSKeyedUnarchiver.unarchiveObject(withFile: historicArchive) {
             let funds = loaded as! Array<Fund>
@@ -49,6 +51,7 @@ class Dao {
         NSKeyedArchiver.archiveRootObject(funds, toFile: fundArchive)
     }
     
+    //Carrega os Fundos salvos
     func loadFunds() -> Array<Fund> {
         if let loaded = NSKeyedUnarchiver.unarchiveObject(withFile: fundArchive) {
             let funds = loaded as! Array<Fund>
@@ -63,7 +66,8 @@ class Dao {
         //Carrega função para extrair detalhes dos dados dos fundos e salvar
         NSKeyedArchiver.archiveRootObject(detail, toFile: detailFundArchive)
     }
-    
+
+    //Carrega os Detalhes dos Fundos salvos
     func loadDetailsFunds() -> Array<FundDetail> {
         if let loaded = NSKeyedUnarchiver.unarchiveObject(withFile: detailFundArchive) {
             let details = loaded as! Array<FundDetail>

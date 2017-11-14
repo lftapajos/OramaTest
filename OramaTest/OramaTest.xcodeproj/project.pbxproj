@@ -147,10 +147,10 @@
 		6984F39C1FB658EC0062C9CA /* OramaTest */ = {
 			isa = PBXGroup;
 			children = (
+				6984F39D1FB658EC0062C9CA /* AppDelegate.swift */,
 				69A1D7B11FBAE89A00DE1E90 /* Transitions */,
 				6984F4081FBA84510062C9CA /* Help */,
 				6984F4011FBA51A30062C9CA /* Controllers */,
-				6984F39D1FB658EC0062C9CA /* AppDelegate.swift */,
 				6984F3E81FBA19BA0062C9CA /* Models */,
 				6984F3FB1FBA3FC40062C9CA /* Login */,
 				6984F3EE1FBA1C6D0062C9CA /* Home */,
@@ -205,27 +205,27 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		6984F3EB1FBA1C030062C9CA /* Controller */ = {
+		6984F3EB1FBA1C030062C9CA /* View */ = {
 			isa = PBXGroup;
 			children = (
 				6984F39F1FB658EC0062C9CA /* ViewController.swift */,
+				6984F3EC1FBA1C160062C9CA /* Cell */,
 			);
-			name = Controller;
+			name = View;
 			sourceTree = "<group>";
 		};
-		6984F3EC1FBA1C160062C9CA /* View */ = {
+		6984F3EC1FBA1C160062C9CA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				6984F3E41FBA01D30062C9CA /* fundListCell.swift */,
 			);
-			name = View;
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		6984F3EE1FBA1C6D0062C9CA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				6984F3EB1FBA1C030062C9CA /* Controller */,
-				6984F3EC1FBA1C160062C9CA /* View */,
+				6984F3EB1FBA1C030062C9CA /* View */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -258,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				6984F3F71FBA35CA0062C9CA /* HistoricViewController.swift */,
-				6984F3F91FBA3AA80062C9CA /* HistoricListCell.swift */,
+				69A1D7B61FBB7F6C00DE1E90 /* Cell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -302,6 +302,14 @@
 				69A1D7B21FBAE8D400DE1E90 /* Transitions.swift */,
 			);
 			name = Transitions;
+			sourceTree = "<group>";
+		};
+		69A1D7B61FBB7F6C00DE1E90 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6984F3F91FBA3AA80062C9CA /* HistoricListCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		A6AB0EBEA0F2EE1A661B522C /* Frameworks */ = {

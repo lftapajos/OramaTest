@@ -23,6 +23,20 @@ class HistoricViewController: UIViewController {
         fundTableView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //Verifica se existem Fundos salvos no Histórico de compras
+        if (self.fundItems.count == 0) {
+            
+            //Mostra alerta se não possuirem dados no Histórico de compras
+            Alert(controller: self).showError(message: "No data saved", handler : { action in
+                
+                //Retorna automaticamente para a lista de Fundos
+                self.view.window!.layer.add(Transitions().transitionFromLeft(), forKey: kCATransition)
+                self.dismiss(animated: false)
+            })
+        }
+    }
+    
     //Remove status bar
     override var prefersStatusBarHidden: Bool {
         return true

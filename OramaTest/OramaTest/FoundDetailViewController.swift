@@ -44,7 +44,6 @@ class FoundDetailViewController: UIViewController {
                     //debugPrint(response.result)
                     
                     if let image = response.result.value {
-                        print("image downloaded: \(image)")
                         DispatchQueue.main.async(execute: {
                             self.activitity.stopAnimating()
                             self.strategyVideo.image = image

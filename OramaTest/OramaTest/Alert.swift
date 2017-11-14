@@ -35,4 +35,12 @@ class Alert {
         details.addAction(cancel)
         controller.present(details, animated: true, completion: nil)
     }
+    
+    //
+    func showError(_ title: String = "Atention", message: String = "Error", handler: @escaping (UIAlertAction) -> Void) {
+        let details = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let cancel = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: handler)
+        details.addAction(cancel)
+        controller.present(details, animated: true, completion: nil)
+    }
 }
