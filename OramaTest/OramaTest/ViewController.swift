@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     // MARK: Declarations
     var fundItems: Array<Fund> = []
+    var overlayView = UIView()
     
     @IBOutlet weak var viewHistory: UIView!
     @IBOutlet weak var fundCollectionView: UICollectionView!
@@ -25,23 +26,34 @@ class ViewController: UIViewController {
         
         self.viewHistory.layer.cornerRadius = 10
         
-        //Chama a API que salva os Fundos
-        if (API().loadApi()) {
+        //Carrega Loadind enquando os dados não são carregados pela chamada da API
+        self.overlayView = OverlayView().loadView(self.view)
+        self.view.addSubview(self.overlayView)
+        
+        //Chama a API que salva os Fundos de detalhes dos Fundos
+        API().loadApi(completion: { (loaded) in
             
-            //Carregou os dados
-            print("Dados carregados")
+            if (loaded) {
+                
+                //Remove overlayView
+                self.overlayView.removeFromSuperview()
+                
+                //Carregou os dados
+                print("Dados carregados")
+                
+                //Alimenta os Fundos no Array
+                self.fundItems = Fund().getFunds()
+                
+                //Recarrega a collectionView
+                self.fundCollectionView.reloadData()
+            }
             
-            //Alimenta os Fundos no Array
-            fundItems = Fund().getFunds()
-            
-            //Recarrega a collectionView
-            fundCollectionView.reloadData()
-            
-        } else {
-            
+        }, failureBlock: {
             //Erro ao carregar dados da API
             Alert(controller: self).show("Sorry", message: "Error to load data")
-        }
+            
+        })
+        
     }
     
     override var prefersStatusBarHidden: Bool {

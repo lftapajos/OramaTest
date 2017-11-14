@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class FoundDetailViewController: UIViewController {
 
@@ -15,6 +17,7 @@ class FoundDetailViewController: UIViewController {
     @IBOutlet weak var initialDate: UILabel!
     @IBOutlet weak var strategyVideo: UIImageView!
     @IBOutlet weak var fundManagerDescription: UITextView!
+    @IBOutlet weak var activitity: UIActivityIndicatorView!
     
     var index = 0
 
@@ -28,9 +31,27 @@ class FoundDetailViewController: UIViewController {
         self.fullName.text = fundItemDetail[index].fullName
         self.initialDate.text = fundItemDetail[index].initialDate
         
+        self.activitity.isHidden = true
+        
         //Se existir carrega a imagem
         if let stragegyVideo = fundItemDetail[index].strategyVideo {
-            self.strategyVideo.image = UIImage(named: stragegyVideo)
+           
+            //Carrega a imagem de thumbnail ,se possuir
+            if (stragegyVideo != "") {
+                self.activitity.startAnimating()
+                Alamofire.request(stragegyVideo).responseImage { response in
+                    //debugPrint(response)
+                    //debugPrint(response.result)
+                    
+                    if let image = response.result.value {
+                        print("image downloaded: \(image)")
+                        DispatchQueue.main.async(execute: {
+                            self.activitity.stopAnimating()
+                            self.strategyVideo.image = image
+                        })
+                    }
+                }
+            }
         }
         
         self.fundManagerDescription.text = fundItemDetail[index].fundManagerDescription

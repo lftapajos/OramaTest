@@ -7,6 +7,7 @@ target 'OramaTest' do
 	use_frameworks!
 	pod 'Alamofire', '~> 4.0'
     pod 'SwiftyJSON'
+    pod 'AlamofireImage'
 end
 
 post_install do |installer|

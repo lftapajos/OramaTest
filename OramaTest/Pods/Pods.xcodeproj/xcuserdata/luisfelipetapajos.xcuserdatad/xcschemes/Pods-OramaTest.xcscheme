@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "047656AD09052DCB64FD73D4593771B8"
+               BlueprintIdentifier = "341A30E45D9CA2A1B9C50114796143AB"
                BuildableName = "Pods_OramaTest.framework"
                BlueprintName = "Pods-OramaTest"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "047656AD09052DCB64FD73D4593771B8"
+            BlueprintIdentifier = "341A30E45D9CA2A1B9C50114796143AB"
             BuildableName = "Pods_OramaTest.framework"
             BlueprintName = "Pods-OramaTest"
             ReferencedContainer = "container:Pods.xcodeproj">

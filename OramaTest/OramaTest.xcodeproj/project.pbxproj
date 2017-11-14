@@ -31,6 +31,7 @@
 		6984F40A1FBA84810062C9CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6984F4091FBA84810062C9CA /* Constants.swift */; };
 		6984F40C1FBA84D70062C9CA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6984F40B1FBA84D70062C9CA /* API.swift */; };
 		69A1D7B31FBAE8D400DE1E90 /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1D7B21FBAE8D400DE1E90 /* Transitions.swift */; };
+		69A1D7B51FBB711300DE1E90 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1D7B41FBB711300DE1E90 /* OverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		6984F4091FBA84810062C9CA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6984F40B1FBA84D70062C9CA /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		69A1D7B21FBAE8D400DE1E90 /* Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
+		69A1D7B41FBB711300DE1E90 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		A121BFC7883C2A70760FFE0D /* Pods-OramaTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OramaTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-OramaTest/Pods-OramaTest.release.xcconfig"; sourceTree = "<group>"; };
 		C7F43E525A56D14ED8ECAB12 /* Pods-OramaTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OramaTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OramaTest/Pods-OramaTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +200,7 @@
 				6984F3E91FBA19D60062C9CA /* FundDetail.swift */,
 				6984F4041FBA528A0062C9CA /* BuyPurchaseDelegate.swift */,
 				6984F4061FBA5DB70062C9CA /* Dao.swift */,
+				69A1D7B41FBB711300DE1E90 /* OverlayView.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				69A1D7B31FBAE8D400DE1E90 /* Transitions.swift in Sources */,
 				6984F40C1FBA84D70062C9CA /* API.swift in Sources */,
 				6984F3EA1FBA19D60062C9CA /* FundDetail.swift in Sources */,
+				69A1D7B51FBB711300DE1E90 /* OverlayView.swift in Sources */,
 				6984F40A1FBA84810062C9CA /* Constants.swift in Sources */,
 				6984F39E1FB658EC0062C9CA /* AppDelegate.swift in Sources */,
 				6984F4071FBA5DB70062C9CA /* Dao.swift in Sources */,
