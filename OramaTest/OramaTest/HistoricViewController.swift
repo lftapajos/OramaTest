@@ -36,15 +36,8 @@ class HistoricViewController: UIViewController {
     
     // MARK: Methods
     @IBAction func backFundHome(_ sender: Any) {
-        
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromLeft
-        self.view.window!.layer.add(transition, forKey: kCATransition)
+        self.view.window!.layer.add(Transitions().transitionFromLeft(), forKey: kCATransition)
         self.dismiss(animated: false)
-        
-        //self.dismiss(animated: true, completion: nil)
     }
 }
 

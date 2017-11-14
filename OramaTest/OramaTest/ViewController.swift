@@ -54,14 +54,8 @@ class ViewController: UIViewController {
     @IBAction func showHistoric(_ sender: Any) {
         let historicViewController = storyboard?.instantiateViewController(withIdentifier: "HistoricViewController") as! HistoricViewController
         
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
-        view.window!.layer.add(transition, forKey: kCATransition)
+        view.window!.layer.add(Transitions().transitionFromRight(), forKey: kCATransition)
         self.present(historicViewController, animated: false, completion: nil)
-        
-        //self.present(historicViewController, animated: true, completion: nil)
     }
 }
 
@@ -92,13 +86,7 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
         let detailViewController = storyboard?.instantiateViewController(withIdentifier: "FoundDetailViewController") as! FoundDetailViewController
         detailViewController.index = indexPath.row
         
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
-        view.window!.layer.add(transition, forKey: kCATransition)
+        view.window!.layer.add(Transitions().transitionFromRight(), forKey: kCATransition)
         self.present(detailViewController, animated: false, completion: nil)
-        
-        //self.present(detailViewController, animated: true, completion: nil)
     }
 }
