@@ -38,4 +38,4 @@ let MOCK_PASSWORD = "123456"
 
 ## License
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE.md] (LICENSE.md) para obter detalhes
+Este projeto está licenciado sob a licença MIT - Consulte LICENÇA para obter detalhes.
