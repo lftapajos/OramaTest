@@ -14,7 +14,7 @@ class FoundDetailViewController: UIViewController {
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var initialDate: UILabel!
     @IBOutlet weak var strategyVideo: UIImageView!
-    @IBOutlet weak var fundManagerDescription: UILabel!
+    @IBOutlet weak var fundManagerDescription: UITextView!
     
     var index = 0
 
