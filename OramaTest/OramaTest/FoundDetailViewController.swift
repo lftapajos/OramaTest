@@ -34,6 +34,10 @@ class FoundDetailViewController: UIViewController {
         }
         
         self.fundManagerDescription.text = fundItemDetail[index].fundManagerDescription
+        
+        //Configure Label
+        self.fullName.lineBreakMode = .byWordWrapping
+        self.fullName.numberOfLines = 0
     }
     
     override var prefersStatusBarHidden: Bool {

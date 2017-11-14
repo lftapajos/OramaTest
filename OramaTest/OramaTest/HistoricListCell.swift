@@ -19,6 +19,10 @@ class HistoricListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        //Configure Label
+        self.simpleName.lineBreakMode = .byWordWrapping
+        self.simpleName.numberOfLines = 0
     }
 
     // MARK: Methods

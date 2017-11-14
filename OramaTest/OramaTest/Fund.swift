@@ -43,7 +43,12 @@ class Fund : NSObject, NSCoding {
     }
 
     func formatCurrency(_ value: Double) -> String{
-        return "R$ \(value)"
+        
+        let currentLocale = Locale.current
+        let currencySymbol = currentLocale.currencySymbol
+        let outputString = "R\(String(describing: currencySymbol!))\(String(format: "%.2f", value))"
+        
+        return outputString
     }
     
     func getFundItem(position fund: Int) -> Fund {

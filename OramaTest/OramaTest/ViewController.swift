@@ -34,6 +34,9 @@ class ViewController: UIViewController {
             //Alimenta os Fundos no Array
             fundItems = Fund().getFunds()
             
+            //Recarrega a collectionView
+            fundCollectionView.reloadData()
+            
         } else {
             
             //Erro ao carregar dados da API
@@ -72,6 +75,9 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! fundListCell
+        
+        cell.simpleName.lineBreakMode = .byWordWrapping
+        cell.simpleName.numberOfLines = 0
         
         let row = indexPath.row
         let fund = fundItems[row]

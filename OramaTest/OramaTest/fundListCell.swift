@@ -14,4 +14,5 @@ class fundListCell: UICollectionViewCell {
     @IBOutlet weak var simpleName: UILabel!
     @IBOutlet weak var operabilityMinimum: UILabel!
     @IBOutlet weak var fundRisk: UILabel!
+    
 }
