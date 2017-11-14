@@ -27,6 +27,8 @@
 		6984F4031FBA51BF0062C9CA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6984F4021FBA51BF0062C9CA /* Alert.swift */; };
 		6984F4051FBA528A0062C9CA /* BuyPurchaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6984F4041FBA528A0062C9CA /* BuyPurchaseDelegate.swift */; };
 		6984F4071FBA5DB70062C9CA /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6984F4061FBA5DB70062C9CA /* Dao.swift */; };
+		6984F40A1FBA84810062C9CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6984F4091FBA84810062C9CA /* Constants.swift */; };
+		6984F40C1FBA84D70062C9CA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6984F40B1FBA84D70062C9CA /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		6984F4021FBA51BF0062C9CA /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		6984F4041FBA528A0062C9CA /* BuyPurchaseDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyPurchaseDelegate.swift; sourceTree = "<group>"; };
 		6984F4061FBA5DB70062C9CA /* Dao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dao.swift; sourceTree = "<group>"; };
+		6984F4091FBA84810062C9CA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6984F40B1FBA84D70062C9CA /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 		6984F39C1FB658EC0062C9CA /* OramaTest */ = {
 			isa = PBXGroup;
 			children = (
+				6984F4081FBA84510062C9CA /* Help */,
 				6984F4011FBA51A30062C9CA /* Controllers */,
 				6984F39D1FB658EC0062C9CA /* AppDelegate.swift */,
 				6984F3E81FBA19BA0062C9CA /* Models */,
@@ -258,6 +263,15 @@
 				6984F4021FBA51BF0062C9CA /* Alert.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6984F4081FBA84510062C9CA /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				6984F4091FBA84810062C9CA /* Constants.swift */,
+				6984F40B1FBA84D70062C9CA /* API.swift */,
+			);
+			name = Help;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,7 +420,9 @@
 				6984F3FA1FBA3AA80062C9CA /* HistoricListCell.swift in Sources */,
 				6984F3F11FBA1CF30062C9CA /* FoundDetailViewController.swift in Sources */,
 				6984F3E71FBA080F0062C9CA /* Fund.swift in Sources */,
+				6984F40C1FBA84D70062C9CA /* API.swift in Sources */,
 				6984F3EA1FBA19D60062C9CA /* FundDetail.swift in Sources */,
+				6984F40A1FBA84810062C9CA /* Constants.swift in Sources */,
 				6984F39E1FB658EC0062C9CA /* AppDelegate.swift in Sources */,
 				6984F4071FBA5DB70062C9CA /* Dao.swift in Sources */,
 				6984F3F81FBA35CA0062C9CA /* HistoricViewController.swift in Sources */,

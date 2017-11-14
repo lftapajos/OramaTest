@@ -12,6 +12,8 @@ class Dao {
     
     // MARK: Declarations
     let fundArchive: String
+    let detailFundArchive: String
+    let historicArchive: String
     
     // MARK: Constructor
     init() {
@@ -20,20 +22,52 @@ class Dao {
         let userDirs = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         let dir = userDirs[0]
         //print(dir)
-        fundArchive = "\(dir)/orama-teste-fund.data"
+        fundArchive = "\(dir)/orama-test-fund.data"
+        detailFundArchive = "\(dir)/orama-test-detail-fund.data"
+        historicArchive = "\(dir)/orama-test-historic.data"
     }
     
     // MARK: Methods
-    //Salva o Fundo
+    //Salva o Fundo no Histórico
     func save(_ fund: Array<Fund>) {
-        NSKeyedArchiver.archiveRootObject(fund, toFile: fundArchive)
+        NSKeyedArchiver.archiveRootObject(fund, toFile: historicArchive)
     }
     
     //Carrega Fundos salvos
     func load() -> Array<Fund> {
+        if let loaded = NSKeyedUnarchiver.unarchiveObject(withFile: historicArchive) {
+            let funds = loaded as! Array<Fund>
+            return funds
+        }
+        return []
+    }
+    
+    //Salva a lista completa de Fundos
+    func saveFunds(_ funds: Array<Fund>) {
+        
+        //Carrega função para extrair dados dos fundos e salvar
+        NSKeyedArchiver.archiveRootObject(funds, toFile: fundArchive)
+    }
+    
+    func loadFunds() -> Array<Fund> {
         if let loaded = NSKeyedUnarchiver.unarchiveObject(withFile: fundArchive) {
             let funds = loaded as! Array<Fund>
             return funds
+        }
+        return []
+    }
+    
+    //Salva a lista completa de Detalhes dos Fundos
+    func saveDetailFunds(_ detail: Array<FundDetail>) {
+        
+        //Carrega função para extrair detalhes dos dados dos fundos e salvar
+        NSKeyedArchiver.archiveRootObject(detail, toFile: detailFundArchive)
+    }
+    
+    func loadDetailsFunds() -> Array<FundDetail> {
+        if let loaded = NSKeyedUnarchiver.unarchiveObject(withFile: detailFundArchive) {
+            let details = loaded as! Array<FundDetail>
+            return details
         }
         return []
     }

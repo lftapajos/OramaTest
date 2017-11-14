@@ -18,6 +18,7 @@ class FoundDetailViewController: UIViewController {
     
     var index = 0
 
+    //API já carregada, traz os detalhes do Fundo
     let fundItemDetail: Array<FundDetail> = FundDetail().getFundDetail()
     
     // MARK: View

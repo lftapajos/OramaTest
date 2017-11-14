@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     // MARK: Declarations
-    let fundItems: Array<Fund> = Fund().getFunds()
+    var fundItems: Array<Fund> = []
     
     @IBOutlet weak var viewHistory: UIView!
     @IBOutlet weak var fundCollectionView: UICollectionView!
@@ -24,6 +24,21 @@ class ViewController: UIViewController {
         fundCollectionView.delegate = self
         
         self.viewHistory.layer.cornerRadius = 10
+        
+        //Chama a API que salva os Fundos
+        if (API().loadApi()) {
+            
+            //Carregou os dados
+            print("Dados carregados")
+            
+            //Alimenta os Fundos no Array
+            fundItems = Fund().getFunds()
+            
+        } else {
+            
+            //Erro ao carregar dados da API
+            Alert(controller: self).show("Sorry", message: "Error to load data")
+        }
     }
     
     override var prefersStatusBarHidden: Bool {

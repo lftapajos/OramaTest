@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Fund : NSObject, NSCoding{
+class Fund : NSObject, NSCoding {
     
     // MARK: Declarations
     let simpleName : String
@@ -37,16 +37,8 @@ class Fund : NSObject, NSCoding{
     
     func getFunds() -> Array<Fund> {
         
-        //Recupera os Fundos Mockados
-        let funds = [
-            Fund(simpleName: "Fundo 1", operabilityMinimum: 1500, fundRisk: "3"),
-            Fund(simpleName: "Fundo 2", operabilityMinimum: 1000, fundRisk: "2"),
-            Fund(simpleName: "Fundo 3", operabilityMinimum: 500, fundRisk: "1"),
-            Fund(simpleName: "Fundo 4", operabilityMinimum: 2000, fundRisk: "4"),
-            Fund(simpleName: "Fundo 5", operabilityMinimum: 4000, fundRisk: "5"),
-            Fund(simpleName: "Fundo 6", operabilityMinimum: 5000, fundRisk: "6")
-        ]
-        
+        //Carrega os Fundos salvos
+        let funds = Dao().loadFunds()
         return funds
     }
 

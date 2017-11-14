@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FundDetail {
+class FundDetail : NSObject, NSCoding {
     
     // MARK: Declarations
     let fullName : String
@@ -24,19 +24,26 @@ class FundDetail {
         self.fundManagerDescription = fundManagerDescription
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        self.fullName = aDecoder.decodeObject(forKey : "fullName") as! String
+        self.initialDate = aDecoder.decodeObject(forKey: "initialDate") as! String
+        self.strategyVideo = aDecoder.decodeObject(forKey : "strategyVideo") as? String
+        self.fundManagerDescription = aDecoder.decodeObject(forKey : "fundManagerDescription") as! String
+    }
+    
+    // MARK: Methods
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(fullName, forKey: "fullName")
+        aCoder.encode(initialDate, forKey : "initialDate")
+        aCoder.encode(strategyVideo, forKey : "strategyVideo")
+        aCoder.encode(fundManagerDescription, forKey : "fundManagerDescription")
+    }
+    
     // MARK: Methods
     func getFundDetail() -> Array<FundDetail> {
         
-        //Recupera os Detalhes dos Fundos Mockados
-        let detail = [
-            FundDetail(fullName: "Fundo de Investimento 1", initialDate: "01-12", strategyVideo: "image1.jpg", fundManagerDescription: "Fundo de investimento para carteira 1"),
-            FundDetail(fullName: "Fundo de Investimento 2", initialDate: "01-12", strategyVideo: "image2.jpg", fundManagerDescription: "Fundo de investimento para carteira 2"),
-            FundDetail(fullName: "Fundo de Investimento 3", initialDate: "03-12", strategyVideo: "image3.jpg", fundManagerDescription: "Fundo de investimento para carteira 3"),
-            FundDetail(fullName: "Fundo de Investimento 4", initialDate: "05-12", strategyVideo: "image4.jpg", fundManagerDescription: "Fundo de investimento para carteira 4"),
-            FundDetail(fullName: "Fundo de Investimento 5", initialDate: "10-12", strategyVideo: "image5.jpg", fundManagerDescription: "Fundo de investimento para carteira 5"),
-            FundDetail(fullName: "Fundo de Investimento 6", initialDate: "15-12", strategyVideo: "image6.jpg", fundManagerDescription: "Fundo de investimento para carteira 6"),
-            ]
-        
-        return detail
+        //Carrega os Detalhes dos Fundos salvos
+        let details = Dao().loadDetailsFunds()
+        return details
     }
 }
