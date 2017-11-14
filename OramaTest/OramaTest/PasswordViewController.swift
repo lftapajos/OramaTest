@@ -37,7 +37,14 @@ class PasswordViewController: UIViewController {
     
     // MARK: Methods
     @IBAction func backFundDetail(_ sender: Any) {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromTop
+        view.window!.layer.add(transition, forKey: kCATransition)
         self.dismiss(animated: true, completion: nil)
+        
+        //self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func confirmPurchase(_ sender: Any) {
@@ -89,7 +96,16 @@ extension PasswordViewController: BuyPurchaseDelegate {
         Alert(controller: self).show(fundItem, handler : { action in
 
             //Fecha as telas
+            
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.type = kCATransitionPush
+            transition.subtype = kCATransitionFromTop
+            self.view.window!.layer.add(transition, forKey: kCATransition)
             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+
+            
+            //self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         })
     }
 }
