@@ -19,12 +19,11 @@ class HistoricViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.fundItems = Dao().load()
-        
         fundTableView.dataSource = self
         fundTableView.delegate = self
     }
     
+    //Remove status bar
     override var prefersStatusBarHidden: Bool {
         return true
     }

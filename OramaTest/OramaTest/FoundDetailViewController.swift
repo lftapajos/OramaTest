@@ -61,6 +61,7 @@ class FoundDetailViewController: UIViewController {
         self.fullName.numberOfLines = 0
     }
     
+    //Remove status bar
     override var prefersStatusBarHidden: Bool {
         return true
     }

@@ -26,20 +26,18 @@ class ViewController: UIViewController {
         
         self.viewHistory.layer.cornerRadius = 10
         
-        //Carrega Loadind enquando os dados não são carregados pela chamada da API
+        //Carrega Loading enquanto os dados não são carregados pela chamada da API
         self.overlayView = OverlayView().loadView(self.view)
         self.view.addSubview(self.overlayView)
         
-        //Chama a API que salva os Fundos de detalhes dos Fundos
+        //Chama a API que salva os Fundos e detalhes dos Fundos
         API().loadApi(completion: { (loaded) in
             
+            //Se carregou, mostra os dados
             if (loaded) {
                 
                 //Remove overlayView
                 self.overlayView.removeFromSuperview()
-                
-                //Carregou os dados
-                print("Dados carregados")
                 
                 //Alimenta os Fundos no Array
                 self.fundItems = Fund().getFunds()
@@ -56,6 +54,7 @@ class ViewController: UIViewController {
         
     }
     
+    //Remove status bar
     override var prefersStatusBarHidden: Bool {
         return true
     }

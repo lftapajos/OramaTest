@@ -10,6 +10,7 @@ import UIKit
 
 class Transitions: CATransition {
     
+    //Trasição de abertura para a direita
     func transitionFromRight() -> CATransition {
     
         let transition = CATransition()
@@ -20,6 +21,7 @@ class Transitions: CATransition {
         return transition
     }
     
+    //Trasição de fechamento para a esquerda
     func transitionFromLeft() -> CATransition {
         
         let transition = CATransition()
@@ -30,6 +32,7 @@ class Transitions: CATransition {
         return transition
     }
     
+    //Transição de abertura para baixo
     func transitionFromBottom() -> CATransition {
         let transition = CATransition()
         transition.duration = 0.5
@@ -39,6 +42,7 @@ class Transitions: CATransition {
         return transition
     }
     
+    //Transição de fechamento para cima
     func transitionFromTop() -> CATransition {
         let transition = CATransition()
         transition.duration = 0.5

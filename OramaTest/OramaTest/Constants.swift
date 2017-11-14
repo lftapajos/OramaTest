@@ -8,4 +8,5 @@
 
 import Foundation
 
+//Url da API
 let API_URL = "https://s3.amazonaws.com/orama-media/json/fund_detail_full.json"

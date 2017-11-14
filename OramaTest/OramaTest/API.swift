@@ -13,6 +13,7 @@ import AlamofireImage
 
 class API {
     
+    //Carrega os dados vindos da API
     func loadApi(completion: @escaping (Bool)->(), failureBlock: @escaping ()->Void) {
         
         var fundsApi : Array<Fund> = []

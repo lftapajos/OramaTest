@@ -15,6 +15,8 @@ class PasswordViewController: UIViewController {
     
     var index = 0
     var fundItems: Array<Fund> = Dao().load()
+    
+    //Password temp
     let MOCK_PASSWORD = "123456"
     
     // MARK: View
@@ -23,9 +25,9 @@ class PasswordViewController: UIViewController {
 
         //Configura teclado
         self.hideKeyboardWhenTappedAround()
-        
     }
 
+    //Remove status bar
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -54,9 +56,7 @@ class PasswordViewController: UIViewController {
         
         //Efetua a compra
         buy(fundItem)
-        
     }
-    
 }
 
 // MARK: Keyboard
