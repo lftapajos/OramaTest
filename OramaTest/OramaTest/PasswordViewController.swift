@@ -13,7 +13,8 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     var index = 0
-    var fundItems: Array<Fund> = Fund().getHistoric()
+    var fundItems: Array<Fund> = Dao().load()
+    let MOCK_PASSWORD = "123456"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,16 @@ class PasswordViewController: UIViewController {
     
     @IBAction func confirmPurchase(_ sender: Any) {
         
-        //Efetua a compra
+        //Testa se a senha foi preenchida corretamente
+        let password = passwordTextField!.text
+        if(password == nil || password == "" || password != MOCK_PASSWORD) {
+            return
+        }
+        
+        //Recupera o fundo para a compra
         let fundItem = Fund().getFundItem(position: index)
+        
+        //Efetua a compra
         buy(fundItem)
         
     }
@@ -43,6 +52,8 @@ class PasswordViewController: UIViewController {
 }
 
 extension PasswordViewController {
+
+    //Recuo de teclado
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PasswordViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -56,12 +67,16 @@ extension PasswordViewController {
 
 extension PasswordViewController: BuyPurchaseDelegate {
     
-    //let delegate : BuyPurchaseDelegate?
-    
+    //Implementa função para comprar um Fundo
     func buy(_ fundItem: Fund) {
-        self.fundItems.append(fundItem)
-        //Dao().save(fundItem)
         
+        //Adiciona o Fundo selecionado na lista de itens
+        self.fundItems.append(fundItem)
+        
+        //Chama função para salvar o novo Fundo no histórico de compas
+        Dao().save(fundItems)
+        
+        //Mostra uma mensagem de confirmação da compra
         Alert(controller: self).show(fundItem, handler : { action in
 
             //Fecha as telas

@@ -12,11 +12,13 @@ class HistoricViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var fundTableView: UITableView!
 
-    let fundItems: Array<Fund> = Fund().getHistoric()
+    let fundItems: Array<Fund> = Dao().load()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //self.fundItems = Dao().load()
+        
         fundTableView.dataSource = self
         fundTableView.delegate = self
     }

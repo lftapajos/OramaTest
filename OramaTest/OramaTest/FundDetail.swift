@@ -24,6 +24,7 @@ class FundDetail {
     
     func getFundDetail() -> Array<FundDetail> {
         
+        //Recupera os Detalhes dos Fundos Mockados
         let detail = [
             FundDetail(fullName: "Fundo de Investimento 1", initialDate: "01-12", strategyVideo: "image1.jpg", fundManagerDescription: "Fundo de investimento para carteira 1"),
             FundDetail(fullName: "Fundo de Investimento 2", initialDate: "01-12", strategyVideo: "image2.jpg", fundManagerDescription: "Fundo de investimento para carteira 2"),

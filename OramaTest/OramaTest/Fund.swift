@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Fund {
+class Fund : NSObject, NSCoding{
     
     let simpleName : String
     let operabilityMinimum : Double
@@ -20,8 +20,21 @@ class Fund {
         self.fundRisk = fundRisk
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        self.simpleName = aDecoder.decodeObject(forKey : "simpleName") as! String
+        self.operabilityMinimum = aDecoder.decodeDouble(forKey: "operabilityMinimum")
+        self.fundRisk = aDecoder.decodeObject(forKey : "fundRisk") as! String
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(simpleName, forKey: "simpleName")
+        aCoder.encode(operabilityMinimum, forKey : "operabilityMinimum")
+        aCoder.encode(fundRisk, forKey : "fundRisk")
+    }
+    
     func getFunds() -> Array<Fund> {
         
+        //Recupera os Fundos Mockados
         let funds = [
             Fund(simpleName: "Fundo 1", operabilityMinimum: 1500, fundRisk: "3"),
             Fund(simpleName: "Fundo 2", operabilityMinimum: 1000, fundRisk: "2"),
@@ -38,18 +51,14 @@ class Fund {
         return "R$ \(value)"
     }
     
-    func getHistoric() -> Array<Fund> {
-        let funds = [
-            Fund(simpleName: "Fundo 1", operabilityMinimum: 1500, fundRisk: "3"),
-            Fund(simpleName: "Fundo 5", operabilityMinimum: 4000, fundRisk: "5"),
-            Fund(simpleName: "Fundo 6", operabilityMinimum: 5000, fundRisk: "6")
-        ]
-        
-        return funds
-    }
-    
     func getFundItem(position fund: Int) -> Fund {
-        let fundToBuy = Fund(simpleName: "Fundo 1", operabilityMinimum: 1500, fundRisk: "3")
+        
+        //Carrega a lista completa de fundos
+        let fundsItems = getFunds()
+        
+        //Filtra e Recupera o fundo da posição chamada
+        let fundToBuy = fundsItems[fund]
+
         return fundToBuy
     }
 }
