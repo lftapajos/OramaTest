@@ -16,9 +16,6 @@ class PasswordViewController: UIViewController {
     var index = 0
     var fundItems: Array<Fund> = Dao().load()
     
-    //Password temp
-    let MOCK_PASSWORD = "123456"
-    
     // MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
