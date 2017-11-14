@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController {
 
-    //var storyboard = UIStoryboard(name: "Main", bundle: nil)
+    // MARK: Declarations
     let fundItems: Array<Fund> = Fund().getFunds()
     
     @IBOutlet weak var viewHistory: UIView!
     @IBOutlet weak var fundCollectionView: UICollectionView!
     
+    // MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -24,17 +25,25 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         self.viewHistory.layer.cornerRadius = 10
     }
-
-    @IBAction func showHistoric(_ sender: Any) {
-        let historicViewController = storyboard?.instantiateViewController(withIdentifier: "HistoricViewController") as! HistoricViewController
-        self.present(historicViewController, animated: true, completion: nil)
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    // MARK: Methods
+    @IBAction func showHistoric(_ sender: Any) {
+        let historicViewController = storyboard?.instantiateViewController(withIdentifier: "HistoricViewController") as! HistoricViewController
+        self.present(historicViewController, animated: true, completion: nil)
+    }
+}
+
+// MARK: CollectionView Delegate
+extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -43,10 +52,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.fundItems.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! fundListCell
-
+        
         let row = indexPath.row
         let fund = fundItems[row]
         cell.simpleName.text = fund.simpleName
@@ -61,6 +70,4 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         detailViewController.index = indexPath.row
         self.present(detailViewController, animated: true, completion: nil)
     }
-    
 }
-

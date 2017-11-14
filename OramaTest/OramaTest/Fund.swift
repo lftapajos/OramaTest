@@ -10,10 +10,12 @@ import Foundation
 
 class Fund : NSObject, NSCoding{
     
+    // MARK: Declarations
     let simpleName : String
     let operabilityMinimum : Double
     let fundRisk: String
     
+    // MARK: Constructors
     init(simpleName: String = "", operabilityMinimum: Double = 0.0, fundRisk: String = "") {
         self.simpleName = simpleName
         self.operabilityMinimum = operabilityMinimum
@@ -26,6 +28,7 @@ class Fund : NSObject, NSCoding{
         self.fundRisk = aDecoder.decodeObject(forKey : "fundRisk") as! String
     }
     
+    // MARK: Methods
     func encode(with aCoder: NSCoder) {
         aCoder.encode(simpleName, forKey: "simpleName")
         aCoder.encode(operabilityMinimum, forKey : "operabilityMinimum")

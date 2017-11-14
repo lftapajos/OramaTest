@@ -10,21 +10,32 @@ import UIKit
 
 class PasswordViewController: UIViewController {
 
+    // MARK: Declarations
     @IBOutlet weak var passwordTextField: UITextField!
     
     var index = 0
     var fundItems: Array<Fund> = Dao().load()
     let MOCK_PASSWORD = "123456"
     
+    // MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //Esconde teclado
+        //Configura teclado
         self.hideKeyboardWhenTappedAround()
         
-        print("Vai comprar fundo \(index)")
     }
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Methods
     @IBAction func backFundDetail(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -44,13 +55,10 @@ class PasswordViewController: UIViewController {
         buy(fundItem)
         
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 }
 
+// MARK: Keyboard
 extension PasswordViewController {
 
     //Recuo de teclado
@@ -65,6 +73,7 @@ extension PasswordViewController {
     }
 }
 
+// MARK: Purchase Delegate
 extension PasswordViewController: BuyPurchaseDelegate {
     
     //Implementa função para comprar um Fundo

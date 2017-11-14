@@ -8,12 +8,14 @@
 
 import UIKit
 
-class HistoricViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HistoricViewController: UIViewController {
 
+    // MARK: Declaratins
     @IBOutlet weak var fundTableView: UITableView!
 
     let fundItems: Array<Fund> = Dao().load()
     
+    // MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,11 +24,24 @@ class HistoricViewController: UIViewController, UITableViewDataSource, UITableVi
         fundTableView.dataSource = self
         fundTableView.delegate = self
     }
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Methods
     @IBAction func backFundHome(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+}
+
+// MARK: TableView Delegate
+extension HistoricViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.fundItems.count
     }
@@ -46,10 +61,4 @@ class HistoricViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }

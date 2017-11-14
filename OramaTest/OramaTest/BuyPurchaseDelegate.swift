@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: Protocol
 protocol BuyPurchaseDelegate {
     func buy(_ fundItem: Fund)
 }

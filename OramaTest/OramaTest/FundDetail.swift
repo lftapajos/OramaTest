@@ -10,11 +10,13 @@ import Foundation
 
 class FundDetail {
     
+    // MARK: Declarations
     let fullName : String
     let initialDate : String
     let strategyVideo: String?
     let fundManagerDescription: String
     
+    // MARK: Constructor
     init(fullName: String = "", initialDate: String = "", strategyVideo: String = "", fundManagerDescription: String = "") {
         self.fullName = fullName
         self.initialDate = initialDate
@@ -22,6 +24,7 @@ class FundDetail {
         self.fundManagerDescription = fundManagerDescription
     }
     
+    // MARK: Methods
     func getFundDetail() -> Array<FundDetail> {
         
         //Recupera os Detalhes dos Fundos Mockados

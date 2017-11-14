@@ -10,6 +10,7 @@ import UIKit
 
 class FoundDetailViewController: UIViewController {
 
+    // MARK: Declarations
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var initialDate: UILabel!
     @IBOutlet weak var strategyVideo: UIImageView!
@@ -19,6 +20,7 @@ class FoundDetailViewController: UIViewController {
 
     let fundItemDetail: Array<FundDetail> = FundDetail().getFundDetail()
     
+    // MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +34,17 @@ class FoundDetailViewController: UIViewController {
         
         self.fundManagerDescription.text = fundItemDetail[index].fundManagerDescription
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
+    // MARK: Methods
     @IBAction func backFundHome(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -42,12 +54,4 @@ class FoundDetailViewController: UIViewController {
         passwordViewController.index = index
         self.present(passwordViewController, animated: true, completion: nil)
     }
-    
-    //PasswordViewController
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }

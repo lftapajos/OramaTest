@@ -11,12 +11,16 @@ import UIKit
 
 class Alert {
     
+    // MARK: Declarations
     let controller: UIViewController
     
+    // MARK: Constructor
     init(controller: UIViewController) {
         self.controller = controller
     }
     
+    // MARK: Methods
+    //Alerta de Erro
     func show(_ title: String = "Sorry", message: String = "Unexpected error.") {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
@@ -24,8 +28,8 @@ class Alert {
         controller.present(alert, animated: true, completion: nil)
     }
     
+    //Alerta de Compra com sucesso
     func show(_ fund: Fund, handler: @escaping (UIAlertAction) -> Void) {
-        
         let details = UIAlertController(title: fund.simpleName, message: "Purchased with success", preferredStyle: UIAlertControllerStyle.alert)
         let cancel = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: handler)
         details.addAction(cancel)

@@ -10,6 +10,7 @@ import UIKit
 
 class fundListCell: UICollectionViewCell {
     
+    // MARK: Declarations
     @IBOutlet weak var simpleName: UILabel!
     @IBOutlet weak var operabilityMinimum: UILabel!
     @IBOutlet weak var fundRisk: UILabel!
