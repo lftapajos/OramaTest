@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5480BE175BD4C10CE24B838C /* Pods_OramaTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57387100F8EDCAFDECC8E2E9 /* Pods_OramaTest.framework */; };
 		6984F39E1FB658EC0062C9CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6984F39D1FB658EC0062C9CA /* AppDelegate.swift */; };
 		6984F3A01FB658EC0062C9CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6984F39F1FB658EC0062C9CA /* ViewController.swift */; };
 		6984F3A31FB658EC0062C9CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6984F3A11FB658EC0062C9CA /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57387100F8EDCAFDECC8E2E9 /* Pods_OramaTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OramaTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6984F39A1FB658EC0062C9CA /* OramaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OramaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6984F39D1FB658EC0062C9CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6984F39F1FB658EC0062C9CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,8 @@
 		6984F4061FBA5DB70062C9CA /* Dao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dao.swift; sourceTree = "<group>"; };
 		6984F4091FBA84810062C9CA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6984F40B1FBA84D70062C9CA /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		A121BFC7883C2A70760FFE0D /* Pods-OramaTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OramaTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-OramaTest/Pods-OramaTest.release.xcconfig"; sourceTree = "<group>"; };
+		C7F43E525A56D14ED8ECAB12 /* Pods-OramaTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OramaTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OramaTest/Pods-OramaTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5480BE175BD4C10CE24B838C /* Pods_OramaTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62136B8E1D92F0CDA518EC6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7F43E525A56D14ED8ECAB12 /* Pods-OramaTest.debug.xcconfig */,
+				A121BFC7883C2A70760FFE0D /* Pods-OramaTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6984F3911FB658EC0062C9CA = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +125,8 @@
 				6984F3B11FB658EC0062C9CA /* OramaTestTests */,
 				6984F3BC1FB658EC0062C9CA /* OramaTestUITests */,
 				6984F39B1FB658EC0062C9CA /* Products */,
+				62136B8E1D92F0CDA518EC6B /* Pods */,
+				A6AB0EBEA0F2EE1A661B522C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,6 +290,14 @@
 			name = Help;
 			sourceTree = "<group>";
 		};
+		A6AB0EBEA0F2EE1A661B522C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57387100F8EDCAFDECC8E2E9 /* Pods_OramaTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,9 +305,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6984F3C21FB658EC0062C9CA /* Build configuration list for PBXNativeTarget "OramaTest" */;
 			buildPhases = (
+				CA86CBFA441051485CB82FB2 /* 📦 Check Pods Manifest.lock */,
 				6984F3961FB658EC0062C9CA /* Sources */,
 				6984F3971FB658EC0062C9CA /* Frameworks */,
 				6984F3981FB658EC0062C9CA /* Resources */,
+				AB415392363B866744041E52 /* 📦 Embed Pods Frameworks */,
+				3597AFF81CAF8E38CC8AC2EF /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -409,6 +436,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3597AFF81CAF8E38CC8AC2EF /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OramaTest/Pods-OramaTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB415392363B866744041E52 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OramaTest/Pods-OramaTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA86CBFA441051485CB82FB2 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6984F3961FB658EC0062C9CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -529,6 +604,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -571,13 +647,16 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		6984F3C31FB658EC0062C9CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7F43E525A56D14ED8ECAB12 /* Pods-OramaTest.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WKFLY4V8UQ;
 				INFOPLIST_FILE = OramaTest/Info.plist;
@@ -590,7 +669,9 @@
 		};
 		6984F3C41FB658EC0062C9CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A121BFC7883C2A70760FFE0D /* Pods-OramaTest.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WKFLY4V8UQ;
 				INFOPLIST_FILE = OramaTest/Info.plist;
