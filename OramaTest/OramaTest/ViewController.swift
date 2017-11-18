@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var fundItems: Array<Fund> = []
     var overlayView = UIView()
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var viewHistory: UIView!
     @IBOutlet weak var fundCollectionView: UICollectionView!
     
@@ -23,6 +24,12 @@ class ViewController: UIViewController {
  
         fundCollectionView.dataSource = self
         fundCollectionView.delegate = self
+        
+        if (UIDevice.current.userInterfaceIdiom == .phone) {
+            titleLabel.font = titleLabel.font.withSize(21.0)
+        } else {
+            titleLabel.font = titleLabel.font.withSize(41.0)
+        }
         
         self.viewHistory.layer.cornerRadius = 10
         
