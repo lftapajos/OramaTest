@@ -29,8 +29,8 @@ class Alert {
     }
     
     //Alerta de Compra com sucesso
-    func show(_ fund: Fund, handler: @escaping (UIAlertAction) -> Void) {
-        let details = UIAlertController(title: fund.simpleName, message: "Purchased with success", preferredStyle: UIAlertControllerStyle.alert)
+    func show(_ fund: FundDetail, index: Int, handler: @escaping (UIAlertAction) -> Void) {
+        let details = UIAlertController(title: fund.fundos[index].simpleName, message: "Purchased with success", preferredStyle: UIAlertControllerStyle.alert)
         let cancel = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: handler)
         details.addAction(cancel)
         controller.present(details, animated: true, completion: nil)

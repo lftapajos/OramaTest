@@ -51,7 +51,8 @@ class API {
                         detailApi.append(FundDetail(fullName: fullName,
                             initialDate: initialDate,
                             strategyVideo: thumbnail,
-                            fundManagerDescription: descriptionManager)
+                            fundManagerDescription: descriptionManager,
+                            fundos: fundsApi)
                         )
                         
                     }

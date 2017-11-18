@@ -87,14 +87,9 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! fundListCell
         
-        cell.simpleName.lineBreakMode = .byWordWrapping
-        cell.simpleName.numberOfLines = 0
-        
         let row = indexPath.row
         let fund = fundItems[row]
-        cell.simpleName.text = fund.simpleName
-        cell.operabilityMinimum.text = Fund().formatCurrency(fund.operabilityMinimum)
-        cell.fundRisk.text = fund.fundRisk
+        cell.configureCell(fund)
         
         return cell
     }

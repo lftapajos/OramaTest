@@ -19,7 +19,7 @@ class FoundDetailViewController: UIViewController {
     @IBOutlet weak var fundManagerDescription: UITextView!
     @IBOutlet weak var activitity: UIActivityIndicatorView!
     
-    var index = 0
+    var index: Int = 0
 
     //API já carregada, traz os detalhes do Fundo
     let fundItemDetail: Array<FundDetail> = FundDetail().getFundDetail()
@@ -28,6 +28,8 @@ class FoundDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //print(fundItemDetail[index].fundos[index].simpleName)
+        
         self.fullName.text = fundItemDetail[index].fullName
         self.initialDate.text = fundItemDetail[index].initialDate
         

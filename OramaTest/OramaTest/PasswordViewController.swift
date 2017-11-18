@@ -14,7 +14,7 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     var index = 0
-    var fundItems: Array<Fund> = Dao().load()
+    var fundItems: Array<FundDetail> = Dao().load()
     
     // MARK: View
     override func viewDidLoad() {
@@ -49,10 +49,10 @@ class PasswordViewController: UIViewController {
         }
         
         //Recupera o fundo para a compra
-        let fundItem = Fund().getFundItem(position: index)
+        let fundItem = FundDetail().getFundDetail()
         
         //Efetua a compra
-        buy(fundItem)
+        buy(fundItem[index])
     }
 }
 
@@ -75,7 +75,7 @@ extension PasswordViewController {
 extension PasswordViewController: BuyPurchaseDelegate {
     
     //Implementa função para comprar um Fundo
-    func buy(_ fundItem: Fund) {
+    func buy(_ fundItem: FundDetail) {
         
         //Adiciona o Fundo selecionado na lista de itens
         self.fundItems.append(fundItem)
@@ -84,7 +84,7 @@ extension PasswordViewController: BuyPurchaseDelegate {
         Dao().save(fundItems)
         
         //Mostra uma mensagem de confirmação da compra
-        Alert(controller: self).show(fundItem, handler : { action in
+        Alert(controller: self).show(fundItem, index: index, handler : { action in
 
             //Fecha as telas
             self.view.window!.layer.add(Transitions().transitionFromTop(), forKey: kCATransition)

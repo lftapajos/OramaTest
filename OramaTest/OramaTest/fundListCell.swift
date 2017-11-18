@@ -15,4 +15,12 @@ class fundListCell: UICollectionViewCell {
     @IBOutlet weak var operabilityMinimum: UILabel!
     @IBOutlet weak var fundRisk: UILabel!
     
+    func configureCell(_ fund: Fund) {
+        simpleName.lineBreakMode = .byWordWrapping
+        simpleName.numberOfLines = 0
+        
+        simpleName.text = fund.simpleName
+        operabilityMinimum.text = Fund().formatCurrency(fund.operabilityMinimum)
+        fundRisk.text = fund.fundRisk
+    }
 }

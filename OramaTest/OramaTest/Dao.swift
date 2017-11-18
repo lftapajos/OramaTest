@@ -31,14 +31,14 @@ class Dao {
     
     // MARK: Methods
     //Salva o Fundo no Histórico
-    func save(_ fund: Array<Fund>) {
+    func save(_ fund: Array<FundDetail>) {
         NSKeyedArchiver.archiveRootObject(fund, toFile: historicArchive)
     }
     
     //Carrega Fundos salvos no Histórico
-    func load() -> Array<Fund> {
+    func load() -> Array<FundDetail> {
         if let loaded = NSKeyedUnarchiver.unarchiveObject(withFile: historicArchive) {
-            let funds = loaded as! Array<Fund>
+            let funds = loaded as! Array<FundDetail>
             return funds
         }
         return []

@@ -13,7 +13,7 @@ class HistoricViewController: UIViewController {
     // MARK: Declaratins
     @IBOutlet weak var fundTableView: UITableView!
 
-    let fundItems: Array<Fund> = Dao().load()
+    let fundItems: Array<FundDetail> = Dao().load()
     
     // MARK: View
     override func viewDidLoad() {
@@ -64,15 +64,14 @@ extension HistoricViewController : UITableViewDataSource, UITableViewDelegate {
         let cell = fundTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath ) as! HistoricListCell
         
         let row = indexPath.row
-        let fund = fundItems[row]
-        cell.simpleName.text = fund.simpleName
-        cell.operabilityMinimum.text = Fund().formatCurrency(fund.operabilityMinimum)
-        cell.fundRisk.text = fund.fundRisk
+        let fundo = fundItems[row]
+        cell.configureCell(fundo, row: row)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 220
+        
     }
 }

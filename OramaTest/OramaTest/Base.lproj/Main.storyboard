@@ -378,15 +378,15 @@
                                     <constraint firstItem="thf-0x-c0F" firstAttribute="top" secondItem="KVa-GG-eo0" secondAttribute="top" id="thW-fk-zbN"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kIN-AT-iQM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="168" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kIN-AT-iQM">
                                 <rect key="frame" x="0.0" y="98" width="320" height="470"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="wae-Vo-Ccl" customClass="HistoricListCell" customModule="OramaTest" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="220" id="wae-Vo-Ccl" customClass="HistoricListCell" customModule="OramaTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wae-Vo-Ccl" id="VQF-5J-0M5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="219.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k05-ZW-oIZ">
@@ -407,13 +407,31 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-GJ-1kQ">
+                                                    <rect key="frame" x="8" y="95" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgs-DG-gWW">
+                                                    <rect key="frame" x="8" y="124" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="wgs-DG-gWW" secondAttribute="leading" id="2P9-eJ-xM6"/>
                                                 <constraint firstItem="Dbl-YU-ve0" firstAttribute="top" secondItem="RFH-Dx-9VS" secondAttribute="bottom" constant="8" id="8qn-KN-CEf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wgs-DG-gWW" secondAttribute="trailing" id="ACb-o6-mTU"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="k05-ZW-oIZ" secondAttribute="leading" id="Bct-2Q-b1B"/>
+                                                <constraint firstItem="cfK-GJ-1kQ" firstAttribute="top" secondItem="Dbl-YU-ve0" secondAttribute="bottom" constant="8" id="GRu-Ez-NF3"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="cfK-GJ-1kQ" secondAttribute="leading" id="MJX-p6-ilB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cfK-GJ-1kQ" secondAttribute="trailing" id="Rxe-CJ-YaU"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="RFH-Dx-9VS" secondAttribute="leading" id="SwL-53-KoX"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="Dbl-YU-ve0" secondAttribute="leading" id="aD6-7Y-mE7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="RFH-Dx-9VS" secondAttribute="trailing" id="b0k-Os-G7M"/>
+                                                <constraint firstItem="wgs-DG-gWW" firstAttribute="top" secondItem="cfK-GJ-1kQ" secondAttribute="bottom" constant="8" id="fMr-VS-a26"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="k05-ZW-oIZ" secondAttribute="trailing" id="mYG-yV-SAN"/>
                                                 <constraint firstItem="RFH-Dx-9VS" firstAttribute="top" secondItem="k05-ZW-oIZ" secondAttribute="bottom" constant="8" id="sFW-xt-Dvp"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Dbl-YU-ve0" secondAttribute="trailing" id="xD5-z3-nz6"/>
@@ -423,7 +441,9 @@
                                             <constraint firstItem="k05-ZW-oIZ" firstAttribute="top" secondItem="wae-Vo-Ccl" secondAttribute="top" constant="8" id="QhQ-rX-cjD"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="fullName" destination="cfK-GJ-1kQ" id="eXm-AS-1hJ"/>
                                             <outlet property="fundRisk" destination="Dbl-YU-ve0" id="1zG-A8-9A2"/>
+                                            <outlet property="initialDate" destination="wgs-DG-gWW" id="RGM-tJ-9Ff"/>
                                             <outlet property="operabilityMinimum" destination="RFH-Dx-9VS" id="ljt-t6-Rlw"/>
                                             <outlet property="simpleName" destination="k05-ZW-oIZ" id="kT9-IX-hZQ"/>
                                         </connections>

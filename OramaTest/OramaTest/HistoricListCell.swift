@@ -14,17 +14,28 @@ class HistoricListCell: UITableViewCell {
     @IBOutlet weak var simpleName: UILabel!
     @IBOutlet weak var operabilityMinimum: UILabel!
     @IBOutlet weak var fundRisk: UILabel!
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var initialDate: UILabel!
     
     // MARK: View
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        //Configure Label
-        self.simpleName.lineBreakMode = .byWordWrapping
-        self.simpleName.numberOfLines = 0
     }
 
+    func configureCell(_ fund: FundDetail, row: Int) {
+        simpleName.lineBreakMode = .byWordWrapping
+        simpleName.numberOfLines = 0
+        
+        fullName.lineBreakMode = .byWordWrapping
+        fullName.numberOfLines = 0
+        
+        simpleName.text = fund.fundos[row].simpleName
+        operabilityMinimum.text = Fund().formatCurrency(fund.fundos[row].operabilityMinimum)
+        fundRisk.text = fund.fundos[row].fundRisk
+        fullName.text = fund.fullName
+        initialDate.text = fund.initialDate
+    }
     // MARK: Methods
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
